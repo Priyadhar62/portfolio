@@ -1,0 +1,287 @@
+/* NAV SECTION*/
+/*1. IMPORT GOOGLE FONT */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins...");
+/* 2. COLOR VARIAble */
+/* We store the main colors of our website here */
+:root {
+    --lighting-color: #7C3AED;
+    --dark-color: #1E1B4B ;
+    --darker-color: #312E81;
+    --secondary-color: #C4B5FD;
+}
+/*3. BASIC CSS RESET /* Apply these settings to every HTML element */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*4. HTML SETTINGS */
+html {
+    font-size: 62.5%;
+}
+/* 5. GENERAL BODY + HTML SETTINGS */
+body,
+html {
+    font-family: "Poppins", sans-serif;
+   font-weight: 300; /* Make the font slightly light */
+   line-height: 1.4; /* Control the spacing between lines of text */
+    scroll-behavior: smooth;
+   color: white; /* Default text color = white */   
+}
+/* 6. BODY WIDTH AND POSITION */
+body {
+     max-width : 1600px;/* Maximum width of the website */
+    margin: 0 auto;
+}
+/*7. LINK SETTINGS*/
+a {
+    text-decoration: none;/* Remove the default underline from links */
+    color: rgb(250, 250, 250);
+}
+/*8. UNORDERED LIST SETTINGS */
+ul {
+    list-style: none;/* Remove default bullet points */
+}
+/* 9. HEADER SETTING*/
+header {
+    background: var(--lighting-color);/* Give the header the main blue color */
+}
+/*10. NAVIGATION BAR */
+nav {
+    display: flex;/* Put logo and menu items in a row */
+    justify-content: space-between;/* Put logo on left and menu on right */
+    align-items: center; /* Align everything vertically in the center */
+    padding: 1rem;/* Add space inside the navigation */
+}
+
+
+/*11. NAVIGATION LIST */
+nav ul {
+    display: flex;/* Put Home, Projects and Contact in a row */
+    gap: 1rem;/* Add space between the menu items */
+}
+/*12. LOGO */
+.logo {
+    font-size: 2rem;/* Make the logo text 2rem */
+     font-weight: 700/* Make the logo bold */
+}
+
+
+/* 13. NAVIGATION ITEMS*/
+nav li {
+     font-size: 1.8rem;/* Set menu text size */
+    border-bottom: 0.4rem transparent solid;/* Create an invisible bottom border.It will become visible when we hover.*/
+    transition: 0.3s ease-in-out;/* Smoothly animate changes */
+}
+/* 14. NAVIGATION HOVER EFFECT*/
+nav li:hover {
+    border-bottom: 0.4rem var(--secondary-color) solid;
+    transition: 0.3s ease-in-out;
+}
+/* hero section*/
+#hero {
+    background: var(--dark-color);
+    padding: 4rem;
+     border-bottom: 4px solid var(--lighting-color);
+}
+#hero .container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.hero_content{
+    display: grid;
+    place-items: center;
+}
+#hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+   
+}
+.hi_text {
+    font-size: 6rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+.name_text {
+    font-size: 5rem;
+}
+.hero_image img{
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid white;
+}
+#hero h2 {
+    font-size: 4rem;
+    font-weight: bold;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */ /* Adjust as needed */
+  animation: typing 5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+/*project section*/
+#project {
+    background: var(--darker-color);
+}
+#project h2 {
+    font-size: 6rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+.project_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 2rem;
+}
+.grid_item {
+    display: grid;
+    place-items: center;
+}
+.card {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: 0.2s ease-in-out;
+}
+.card:hover {
+  transform: scale(1.05);
+  transition: 1s ease-in-out;
+}
+.card:hover img {
+  transform: scale(1.05);
+  transition: 0.3s ease-in-out;
+  opacity: 0.8;
+}
+.card:hover .card_content {
+  background: white;
+  color: var(--dark-color);
+  transform: translateY(0px);
+}
+
+.card_content {
+  padding: 2rem;
+  position: relative;
+  top: -6.5rem;
+  margin-bottom: -6.5rem;
+  transition: 0.5s ease-in-out;
+  transform: translateY(100px);
+}
+.card_content h3 {
+  text-align: center;
+}
+
+/* Contact Section */
+#contact {
+  background: var(--dark-color);
+}
+
+#contact h2 {
+  font-size: 6rem;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+#contact .container {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  justify-content: center;
+}
+
+.top_contact {
+  max-width: 800px;
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+}
+.contact_way {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.contact_way i {
+  font-size: 3rem;
+}
+.contact_way h3 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.bottom_contact {
+  max-width: 400px;
+  gap: 1rem;
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+}
+
+/* Footer */
+
+footer {
+  background: var(--darker-color);
+  padding: 2rem;
+  color: white;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+/* Media Query */
+
+@media (max-width: 786px) {
+  html {
+    font-size: 40%;
+  }
+  #hero .container {
+    flex-direction: column;
+  }
+  .hero_image {
+    display: grid;
+    place-items: center;
+  }
+  #contact .container {
+    height: 70vh;
+  }
+}
+@media (max-width: 500px) {
+  html {
+    font-size: 32%;
+  }
+  #hero .container {
+    flex-direction: column;
+  }
+  .hero_image {
+    display: grid;
+    place-items: center;
+  }
+  #contact .container {
+    height: 50vh;
+  }
+}
